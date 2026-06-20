@@ -45,7 +45,27 @@ Open [http://localhost:3000](http://localhost:3000) — you'll be redirected to 
 
 ## Deploy
 
-### Vercel (recommended)
+**Live site:** [https://warathaai.netlify.app](https://warathaai.netlify.app)  
+**GitHub:** [github.com/Drkyoju/waratha](https://github.com/Drkyoju/waratha)
+
+Every push to the `main` branch automatically deploys to Netlify (usually within 1–2 minutes).
+
+```bash
+git add .
+git commit -m "Your change description"
+git push origin main
+```
+
+### Netlify
+
+1. Site is connected to `Drkyoju/waratha` on GitHub.
+2. Set these in **Netlify → Site configuration → Environment variables**:
+   - `NEXT_PUBLIC_SITE_URL` → `https://warathaai.netlify.app`
+   - `CONTACT_EMAIL` → your contact email
+   - `RESEND_API_KEY` → optional, for contact form emails
+3. After changing env vars, use **Deploys → Trigger deploy → Deploy project without cache**.
+
+### Vercel (alternative)
 
 1. Push the repository to GitHub.
 2. Import the project in [Vercel](https://vercel.com).
