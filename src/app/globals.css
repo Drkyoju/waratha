@@ -194,6 +194,26 @@ html {
   .dna-flow-path-reverse {
     animation: dna-flow-reverse 24s ease-in-out infinite;
   }
+
+  .hero-dna-strand-25 {
+    animation: hero-dna-rise 25s ease-in-out infinite alternate;
+  }
+
+  .hero-dna-strand-30 {
+    animation: hero-dna-rise 30s ease-in-out infinite alternate;
+  }
+
+  .hero-dna-strand-35 {
+    animation: hero-dna-rise 35s ease-in-out infinite alternate;
+  }
+
+  .hero-dashboard-float {
+    animation: hero-card-float 4s ease-in-out infinite;
+  }
+
+  .hero-status-pulse {
+    animation: hero-status-pulse 2s ease-in-out infinite;
+  }
 }
 
 @keyframes dna-drift {
@@ -229,6 +249,35 @@ html {
   }
 }
 
+@keyframes hero-dna-rise {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-60px);
+  }
+}
+
+@keyframes hero-card-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes hero-status-pulse {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 @keyframes accordion-down {
   from {
     height: 0;
@@ -254,7 +303,12 @@ html {
 
   .dna-pattern,
   .dna-flow-path,
-  .dna-flow-path-reverse {
+  .dna-flow-path-reverse,
+  .hero-dna-strand-25,
+  .hero-dna-strand-30,
+  .hero-dna-strand-35,
+  .hero-dashboard-float,
+  .hero-status-pulse {
     animation: none !important;
   }
 }

@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 
-import { DnaHelixIcon } from "@/components/icons/dna-helix"
+import { WarathaLogo } from "@/components/waratha-logo"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { Container } from "@/components/layout/container"
 import { Separator } from "@/components/ui/separator"
@@ -36,12 +36,9 @@ export function Footer({ locale, dict }: FooterProps) {
           <div className="space-y-4">
             <Link
               href={`/${locale}`}
-              className="inline-flex items-center gap-2.5 font-semibold"
+              className="inline-flex transition-opacity hover:opacity-90"
             >
-              <span className="flex size-9 items-center justify-center rounded-lg bg-waratha-primary text-primary-foreground">
-                <DnaHelixIcon size={18} />
-              </span>
-              <span className="text-lg">{dict.brand.name}</span>
+              <WarathaLogo locale={locale} wordmarkClassName="text-white" />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-white/70">
               {dict.footer.tagline}

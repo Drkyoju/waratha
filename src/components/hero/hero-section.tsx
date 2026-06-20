@@ -35,7 +35,7 @@ export function HeroSection({ dict }: HeroSectionProps) {
     <section className="relative -mt-16 flex min-h-screen flex-col bg-waratha-secondary pt-16 text-white">
       <DnaPattern />
 
-      <div className="relative flex flex-1 items-center py-16 sm:py-20 md:py-28">
+      <div className="relative z-10 flex flex-1 items-center py-16 sm:py-20 md:py-28">
         <Container>
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <motion.div
@@ -99,7 +99,7 @@ export function HeroSection({ dict }: HeroSectionProps) {
         viewport={{ once: true }}
         transition={{ delay: 0.5, duration: 0.5 }}
         aria-label={dict.hero.scrollHint}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 transition-colors hover:text-white/80"
+        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-white/50 transition-colors hover:text-white/80"
       >
         <ChevronDown className="size-6 animate-bounce" />
       </motion.a>

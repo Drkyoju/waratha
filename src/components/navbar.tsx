@@ -4,7 +4,7 @@ import { Menu } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
-import { DnaHelixIcon } from "@/components/icons/dna-helix"
+import { WarathaLogo } from "@/components/waratha-logo"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { Container } from "@/components/layout/container"
 import { useRequestAccess } from "@/components/providers/request-access-provider"
@@ -56,12 +56,12 @@ export function Navbar({ locale, dict }: NavbarProps) {
   const logo = (
     <Link
       href={`/${locale}`}
-      className="inline-flex items-center gap-2.5 font-semibold transition-opacity hover:opacity-90"
+      className="inline-flex transition-opacity hover:opacity-90"
     >
-      <span className="flex size-9 items-center justify-center rounded-lg bg-waratha-primary text-primary-foreground">
-        <DnaHelixIcon size={18} />
-      </span>
-      <span className="text-lg tracking-tight">{dict.brand.name}</span>
+      <WarathaLogo
+        locale={locale}
+        wordmarkClassName={cn(!scrolled && "text-white")}
+      />
     </Link>
   )
 
@@ -94,7 +94,8 @@ export function Navbar({ locale, dict }: NavbarProps) {
         </SheetTrigger>
         <SheetContent side={locale === "ar" ? "left" : "right"} className="w-80">
           <SheetHeader>
-            <SheetTitle>{dict.brand.name}</SheetTitle>
+            <SheetTitle className="sr-only">{dict.brand.name}</SheetTitle>
+            <WarathaLogo locale={locale} />
           </SheetHeader>
           <Separator className="my-4" />
           <nav className="flex flex-col gap-1">

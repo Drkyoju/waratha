@@ -34,6 +34,7 @@ const ar = {
     scrollHint: "انتقل للأسفل",
     dashboard: {
       title: "لوحة التفسير السريري",
+      panelTitle: "وراثة | Waratha Clinical Panel",
       patientEntry: "معرف المريض: SA-0042 | الجين: HADHA | المتغير: c.1528G>A",
       statusBadge: "⚠ أُعيد تصنيفه: مرجح أن يكون مرضياً",
       confidenceLabel: "مستوى الثقة",
@@ -517,6 +518,7 @@ const en = {
     scrollHint: "Scroll down",
     dashboard: {
       title: "Clinical interpretation panel",
+      panelTitle: "وراثة | Waratha Clinical Panel",
       patientEntry: "Patient ID: SA-0042 | Gene: HADHA | Variant: c.1528G>A",
       statusBadge: "⚠ Reclassified: Likely Pathogenic",
       confidenceLabel: "Confidence",
