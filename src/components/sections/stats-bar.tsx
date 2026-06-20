@@ -36,6 +36,7 @@ function AnimatedStatValue({
   useEffect(() => {
     if (!inView) return
 
+    setDisplay(0)
     const controls = animate(0, item.value, {
       duration: 2,
       ease: "easeOut",
@@ -43,7 +44,7 @@ function AnimatedStatValue({
     })
 
     return () => controls.stop()
-  }, [inView, item.value])
+  }, [inView, item.value, locale])
 
   return (
     <>
@@ -58,13 +59,15 @@ function AnimatedStatValue({
 
 export function StatsBar({ locale, dict }: StatsBarProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true, amount: 0.3 })
+  const inView = useInView(ref, { once: true, amount: 0.15 })
 
   return (
-    <section className="bg-waratha-primary py-10 text-white sm:py-12 md:py-14">
+    <section
+      ref={ref}
+      className="bg-waratha-primary py-10 text-white sm:py-12 md:py-14"
+    >
       <Container size="wide">
         <motion.div
-          ref={ref}
           variants={staggerContainerVariants}
           initial="hidden"
           whileInView="visible"

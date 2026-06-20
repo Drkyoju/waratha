@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useCallback, useContext, useMemo, useState } from "react"
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react"
 
 import { DemoModal } from "@/components/demo-modal"
 import { RequestAccessModal } from "@/components/request-access-modal"
@@ -49,6 +49,12 @@ export function RequestAccessProvider({
     setRequestOpen(false)
     setDefaultRole(undefined)
   }, [])
+
+  useEffect(() => {
+    setRequestOpen(false)
+    setDemoOpen(false)
+    setDefaultRole(undefined)
+  }, [locale])
 
   const value = useMemo(
     () => ({ openRequestAccess, openDemoModal, closeRequestAccess }),
