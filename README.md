@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Waratha (وراثة)
 
-## Getting Started
+Saudi-native AI platform for clinical genomic variant interpretation. Waratha helps clinical geneticists in Saudi hospitals turn exome sequencing results into clinical decisions — calibrated to Saudi population data, PDPL-compliant, and Arabic-first.
 
-First, run the development server:
+## Tech stack
+
+- **Next.js 15** (App Router, TypeScript)
+- **Tailwind CSS v4**
+- **shadcn/ui** (New York style)
+- **framer-motion** for scroll animations
+- **next-themes** for dark mode
+- Bilingual routing: `/ar` (default) and `/en`
+
+## Local setup
 
 ```bash
+# Install dependencies
+npm install
+
+# Copy environment variables
+cp .env.example .env.local
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) — you'll be redirected to `/ar` by default.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_SITE_URL` | Public site URL for Open Graph and canonical links |
+| `CONTACT_EMAIL` | Contact email shown on the site |
+| `RESEND_API_KEY` | Resend API key for sending contact form emails (optional) |
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Production build |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Vercel (recommended)
 
-## Deploy on Vercel
+1. Push the repository to GitHub.
+2. Import the project in [Vercel](https://vercel.com).
+3. Set environment variables in the Vercel dashboard:
+   - `NEXT_PUBLIC_SITE_URL` → your production URL (e.g. `https://waratha.sa`)
+   - `CONTACT_EMAIL` → your contact email
+   - `RESEND_API_KEY` → when email integration is enabled
+4. Deploy. Vercel auto-detects Next.js — no extra config needed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Docker (standalone)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project is configured with `output: "standalone"` in `next.config.ts`.
+
+```bash
+npm run build
+docker build -t waratha .
+docker run -p 3000:3000 waratha
+```
+
+## Project structure
+
+```
+src/
+├── app/
+│   ├── [locale]/          # Localized pages (ar, en)
+│   └── api/contact/       # Contact form API route
+├── components/
+│   ├── hero/              # Hero section
+│   ├── sections/          # Page sections
+│   └── ui/                # shadcn/ui components
+├── i18n/
+│   ├── dictionaries.ts    # All UI strings (AR + EN)
+│   └── config.ts          # Locale configuration
+└── lib/                   # Utilities, fonts, formatting
+```
+
+## License
+
+Proprietary — Waratha © 2026
