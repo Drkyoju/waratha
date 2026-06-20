@@ -29,7 +29,7 @@ const fadeUp = {
 }
 
 export function HeroSection({ dict }: HeroSectionProps) {
-  const { openRequestAccess } = useRequestAccess()
+  const { openRequestAccess, openDemoModal } = useRequestAccess()
 
   return (
     <section className="relative -mt-16 flex min-h-screen flex-col bg-waratha-secondary pt-16 text-white">
@@ -68,7 +68,7 @@ export function HeroSection({ dict }: HeroSectionProps) {
                 <Button
                   size="lg"
                   className="w-full bg-waratha-primary text-primary-foreground hover:bg-waratha-primary/90 sm:w-auto"
-                  onClick={openRequestAccess}
+                  onClick={() => openRequestAccess()}
                 >
                   {dict.hero.primaryCta}
                 </Button>
@@ -78,9 +78,9 @@ export function HeroSection({ dict }: HeroSectionProps) {
                   className={cn(
                     "w-full border border-white/20 text-white hover:bg-white/10 hover:text-white sm:w-auto"
                   )}
-                  asChild
+                  onClick={openDemoModal}
                 >
-                  <a href="#how-it-works">{dict.hero.secondaryCta}</a>
+                  {dict.hero.secondaryCta}
                 </Button>
               </motion.div>
             </motion.div>

@@ -7,6 +7,7 @@ import { HospitalsSection } from "@/components/sections/hospitals-section"
 import { HowItWorksSection } from "@/components/sections/how-it-works-section"
 import { PricingSection } from "@/components/sections/pricing-section"
 import { ProblemSection } from "@/components/sections/problem-section"
+import { ResearchSection } from "@/components/sections/research-section"
 import { SolutionSection } from "@/components/sections/solution-section"
 import { StatsBar } from "@/components/sections/stats-bar"
 import { type Locale } from "@/i18n/config"
@@ -33,6 +34,7 @@ export function HomePageClient({
       <HospitalsSection dict={dict.hospitals} />
       <PricingSection dict={dict.pricing} />
       <FaqSection dict={dict.faqSection} />
+      <ResearchSection dict={dict.researchSection} />
       <ContactSection dict={dict.contactSection} contactEmail={contactEmail} />
     </main>
   )

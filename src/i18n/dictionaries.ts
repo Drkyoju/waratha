@@ -188,16 +188,19 @@ const ar = {
         title: "مستشفى الملك فيصل التخصصي",
         description:
           "مراكز الجينوم الثالثية ذات أحجام الإكسوم العالية.",
+        presetRole: "lab-director",
       },
       {
         title: "مستشفيات وزارة الصحة",
         description:
           "المراكز الإقليمية التي تدير إحالات الأمراض النادرة.",
+        presetRole: "clinical-geneticist",
       },
       {
         title: "المختبرات الخاصة",
         description:
           "مختبرات التشخيص الجزيئي الخاصة التي توسّع قدراتها في إعداد التقارير.",
+        presetRole: "lab-director",
       },
     ],
     quote: {
@@ -237,6 +240,50 @@ const ar = {
         ],
         cta: "تواصل مع المبيعات",
         highlighted: true,
+      },
+    ],
+  },
+  researchSection: {
+    eyebrow: "الأساس البحثي",
+    title: "مبني على أدلة سريرية وجينومية سعودية",
+    description:
+      "وراثة ليست مجرد نموذج ذكاء اصطناعي — إنها مبنية على أبحاث موثّقة تُظهر فعالية الذكاء الاصطناعي في التشخيص الجيني وأهمية البيانات السكانية المحلية.",
+    cards: [
+      {
+        source: "NEJM AI (2023)",
+        icon: "file-text",
+        title: "أولوية المتغيرات بالذكاء الاصطناعي تتفوق على المراجعة اليدوية",
+        statBadge: "78% دقة في أفضل 5",
+        description:
+          "أظهر AI-MARRVEL أن أولوية المتغيرات المعتمدة على التعلم الآلي تحقق 78% دقة تشخيصية في أفضل 5 نتائج لاضطرابات مندلية — مما يؤسس الجدوى السريرية للذكاء الاصطناعي في التشخيص الجينومي.",
+        linkLabel: "اقرأ الدراسة ←",
+      },
+      {
+        source: "BMJ Journal of Medical Genetics",
+        icon: "bar-chart",
+        title: "بيانات السكان المحلية تزيد العائد التشخيصي بنحو 10%",
+        statBadge: "زيادة ~10% في العائد",
+        description:
+          "إعادة التصنيف باستخدام ترددات أليل مطابقة للسكان تحسّن النتائج التشخيصية بشكل ملموس — الأساس العلمي لطبقة المرجع السعودي في وراثة.",
+        linkLabel: "اقرأ الدراسة ←",
+      },
+      {
+        source: "مدينة الملك سعود الطبية",
+        icon: "users",
+        title: "عبء المتغيرات ذات المعنى المجهول موثّق لدى 1,080 مريض سعودي",
+        statBadge: "1,080 مريض",
+        description:
+          "دراسة على مجموعة سعودية أكدت المعدل المرتفع للمتغيرات ذات المعنى المجهول لدى مرضى الأمراض الجينية — المشكلة السريرية المباشرة التي تحلها وراثة.",
+        linkLabel: "اقرأ الدراسة ←",
+      },
+      {
+        source: "البرنامج السعودي للجينوم",
+        icon: "database",
+        title: "7,500 متغير مرضي سعودي موثّق",
+        statBadge: "+63,000 عينة",
+        description:
+          "سلّم البرنامج السعودي للجينوم أكثر من 63,000 عينة ووثّق 7,500 متغيراً مرضياً — لتشكيل مجموعة المرجع التي تغذي طبقة ترددات الأليل السعودية في وراثة.",
+        linkLabel: "اعرف المزيد ←",
       },
     ],
   },
@@ -382,6 +429,11 @@ const ar = {
       { value: "200-500", label: "200–500" },
       { value: "500-plus", label: "500+" },
     ],
+  },
+  demoModal: {
+    title: "شاهد العرض التوضيحي",
+    placeholder:
+      "العرض التوضيحي قادم قريباً — اطلب الوصول المبكر للحصول على جولة مباشرة",
   },
   footer: {
     tagline: "الذكاء الاصطناعي الجيني للسعودية",
@@ -672,16 +724,19 @@ const en = {
         title: "KFSHRC",
         description:
           "Tertiary genomics centers with high exome volumes.",
+        presetRole: "lab-director",
       },
       {
         title: "MOH Regional Hospitals",
         description:
           "Regional centers managing rare disease referrals.",
+        presetRole: "clinical-geneticist",
       },
       {
         title: "Private Labs",
         description:
           "Private molecular diagnostic labs scaling reporting capacity.",
+        presetRole: "lab-director",
       },
     ],
     quote: {
@@ -721,6 +776,50 @@ const en = {
         ],
         cta: "Contact Sales",
         highlighted: true,
+      },
+    ],
+  },
+  researchSection: {
+    eyebrow: "Research Foundation",
+    title: "Built on clinical and Saudi genomics evidence",
+    description:
+      "Waratha is not just an AI model — it is grounded in published research demonstrating AI efficacy in genomic diagnosis and the importance of local population data.",
+    cards: [
+      {
+        source: "NEJM AI (2023)",
+        icon: "file-text",
+        title: "AI Variant Prioritization Outperforms Manual Review",
+        statBadge: "78% top-5 accuracy",
+        description:
+          "AI-MARRVEL demonstrated that ML-based variant prioritization achieves 78% top-5 diagnostic accuracy on Mendelian disorders — establishing the clinical viability of AI in genomic diagnosis.",
+        linkLabel: "Read Study →",
+      },
+      {
+        source: "BMJ Journal of Medical Genetics",
+        icon: "bar-chart",
+        title: "Local Population Data Increases Diagnostic Yield by ~10%",
+        statBadge: "~10% yield increase",
+        description:
+          "Reclassification using population-matched allele frequencies demonstrably improves diagnostic outcomes — the scientific basis for Waratha's Saudi-specific reference layer.",
+        linkLabel: "Read Study →",
+      },
+      {
+        source: "King Saud Medical City",
+        icon: "users",
+        title: "VUS Burden Documented in 1,080 Saudi Patients",
+        statBadge: "1,080 patients",
+        description:
+          "A Saudi-cohort study confirmed the high rate of unresolved Variants of Unknown Significance in Saudi genetic disease patients — the direct clinical problem Waratha solves.",
+        linkLabel: "Read Study →",
+      },
+      {
+        source: "Saudi Genome Program",
+        icon: "database",
+        title: "7,500 Pathogenic Saudi Variants Documented",
+        statBadge: "63,000+ samples",
+        description:
+          "The Saudi Genome Program has sequenced over 63,000 samples and documented 7,500 pathogenic variants — forming the reference dataset that powers Waratha's Saudi allele-frequency layer.",
+        linkLabel: "Learn More →",
       },
     ],
   },
@@ -866,6 +965,11 @@ const en = {
       { value: "200-500", label: "200–500" },
       { value: "500-plus", label: "500+" },
     ],
+  },
+  demoModal: {
+    title: "Watch Demo",
+    placeholder:
+      "Demo coming soon — request early access for a live walkthrough",
   },
   footer: {
     tagline: "AI Genomics for Saudi Arabia",

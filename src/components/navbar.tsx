@@ -75,7 +75,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
           !scrolled &&
             "bg-waratha-primary text-primary-foreground hover:bg-waratha-primary/90"
         )}
-        onClick={openRequestAccess}
+        onClick={() => openRequestAccess()}
       >
         {dict.nav.requestAccess}
       </Button>

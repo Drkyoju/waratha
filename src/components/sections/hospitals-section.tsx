@@ -71,7 +71,9 @@ export function HospitalsSection({ dict }: HospitalsSectionProps) {
                     <Button
                       variant="ghost"
                       className="mt-auto w-fit px-0 text-waratha-primary hover:bg-transparent hover:text-waratha-primary/80"
-                      onClick={openRequestAccess}
+                      onClick={() =>
+                        openRequestAccess({ role: card.presetRole })
+                      }
                     >
                       {dict.learnMore}
                     </Button>
@@ -95,7 +97,7 @@ export function HospitalsSection({ dict }: HospitalsSectionProps) {
                 </div>
                 <Button
                   className="w-full shrink-0 bg-waratha-primary hover:bg-waratha-primary/90 sm:w-auto"
-                  onClick={openRequestAccess}
+                  onClick={() => openRequestAccess()}
                 >
                   {dict.quote.cta}
                 </Button>

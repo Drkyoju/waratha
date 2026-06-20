@@ -102,7 +102,7 @@ export function PricingSection({ dict }: PricingSectionProps) {
                           : "bg-white/10 text-white hover:bg-white/20"
                       )}
                       variant={plan.highlighted ? "default" : "secondary"}
-                      onClick={openRequestAccess}
+                      onClick={() => openRequestAccess()}
                     >
                       {plan.cta}
                     </Button>

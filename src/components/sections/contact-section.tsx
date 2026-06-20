@@ -37,7 +37,7 @@ export function ContactSection({ dict, contactEmail }: ContactSectionProps) {
           <Button
             size="lg"
             className="bg-waratha-primary hover:bg-waratha-primary/90"
-            onClick={openRequestAccess}
+            onClick={() => openRequestAccess()}
           >
             {dict.cta}
           </Button>

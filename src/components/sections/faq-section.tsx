@@ -24,7 +24,7 @@ type FaqSectionProps = {
 
 export function FaqSection({ dict }: FaqSectionProps) {
   return (
-    <section id="research" className="bg-waratha-bg py-20 md:py-28">
+    <section className="bg-waratha-bg py-20 md:py-28">
       <Container size="narrow">
         <motion.div
           variants={staggerContainerVariants}
