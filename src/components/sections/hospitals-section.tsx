@@ -70,7 +70,7 @@ export function HospitalsSection({ dict }: HospitalsSectionProps) {
                     </div>
                     <Button
                       variant="ghost"
-                      className="mt-auto w-fit px-0 text-waratha-primary hover:bg-transparent hover:text-waratha-primary/80"
+                      className="touch-target mt-auto min-h-11 w-fit px-0 text-waratha-primary hover:bg-transparent hover:text-waratha-primary/80"
                       onClick={() =>
                         openRequestAccess({ role: card.presetRole })
                       }

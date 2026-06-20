@@ -46,7 +46,7 @@ export function LanguageSwitcher({ locale, labels, inverted }: LanguageSwitcherP
             onClick={() => switchLocale(code)}
             aria-pressed={isActive}
             className={cn(
-              "rounded-full px-3 py-1 text-xs font-medium transition-colors",
+              "touch-target min-h-11 rounded-full px-3 py-2 text-sm font-medium transition-colors",
               isActive
                 ? inverted
                   ? "bg-white text-waratha-secondary shadow-sm"

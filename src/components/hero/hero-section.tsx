@@ -47,7 +47,7 @@ export function HeroSection({ dict }: HeroSectionProps) {
               <motion.h1
                 custom={0}
                 variants={fadeUp}
-                className="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.15]"
+                className="type-h1 font-semibold tracking-tight text-white"
               >
                 {dict.hero.title}
               </motion.h1>
@@ -55,7 +55,7 @@ export function HeroSection({ dict }: HeroSectionProps) {
               <motion.p
                 custom={1}
                 variants={fadeUp}
-                className="max-w-xl text-base leading-relaxed text-white/75 sm:text-lg md:text-xl"
+                className="max-w-xl text-base leading-relaxed text-white/75 sm:text-lg"
               >
                 {dict.hero.subtitle}
               </motion.p>
@@ -63,11 +63,11 @@ export function HeroSection({ dict }: HeroSectionProps) {
               <motion.div
                 custom={2}
                 variants={fadeUp}
-                className="flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+                className="flex flex-col gap-3"
               >
                 <Button
                   size="lg"
-                  className="w-full bg-waratha-primary text-primary-foreground hover:bg-waratha-primary/90 sm:w-auto"
+                  className="touch-target w-full bg-waratha-primary text-primary-foreground hover:bg-waratha-primary/90"
                   onClick={() => openRequestAccess()}
                 >
                   {dict.hero.primaryCta}
@@ -76,7 +76,7 @@ export function HeroSection({ dict }: HeroSectionProps) {
                   size="lg"
                   variant="ghost"
                   className={cn(
-                    "w-full border border-white/20 text-white hover:bg-white/10 hover:text-white sm:w-auto"
+                    "touch-target w-full border border-white/20 text-white hover:bg-white/10 hover:text-white"
                   )}
                   onClick={openDemoModal}
                 >

@@ -78,7 +78,7 @@ export function ResearchSection({ dict }: ResearchSectionProps) {
                       </div>
 
                       <div className="space-y-1">
-                        <p className="text-xs font-medium tracking-wide text-waratha-muted uppercase">
+                        <p className="text-sm font-medium tracking-wide text-waratha-muted uppercase">
                           {card.source}
                         </p>
                         <h3 className="text-lg font-semibold leading-snug text-waratha-text">

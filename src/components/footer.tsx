@@ -32,7 +32,7 @@ export function Footer({ locale, dict }: FooterProps) {
   return (
     <footer className="bg-waratha-secondary text-white">
       <Container className="py-14">
-        <div className="grid gap-10 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div className="space-y-4">
             <Link
               href={`/${locale}`}

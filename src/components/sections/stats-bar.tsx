@@ -84,7 +84,7 @@ export function StatsBar({ locale, dict }: StatsBarProps) {
               <p className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
                 <AnimatedStatValue item={item} locale={locale} inView={inView} />
               </p>
-              <p className="mt-2 text-xs leading-relaxed text-white/80 sm:text-sm md:text-base">
+              <p className="mt-2 text-sm leading-relaxed text-white/80 sm:text-base">
                 {item.label}
               </p>
             </motion.div>

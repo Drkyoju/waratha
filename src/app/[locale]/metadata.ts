@@ -16,6 +16,7 @@ export async function generateMetadata({
   const locale: Locale = isLocale(localeParam) ? localeParam : defaultLocale
   const dict = getDictionary(locale)
   const siteUrl = getSiteUrl()
+  const canonicalUrl = `${siteUrl}/${locale}`
   const ogImage = getOgImageDataUri(locale)
 
   return {
@@ -23,16 +24,25 @@ export async function generateMetadata({
     description: dict.meta.description,
     metadataBase: new URL(siteUrl),
     alternates: {
-      canonical: `/${locale}`,
+      canonical: canonicalUrl,
       languages: {
-        ar: "/ar",
-        en: "/en",
+        ar: `${siteUrl}/ar`,
+        en: `${siteUrl}/en`,
       },
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    icons: {
+      icon: "/favicon.svg",
+      shortcut: "/favicon.svg",
+      apple: "/favicon.svg",
     },
     openGraph: {
       title: dict.meta.title,
       description: dict.meta.description,
-      url: `${siteUrl}/${locale}`,
+      url: canonicalUrl,
       siteName: dict.brand.name,
       locale: locale === "ar" ? "ar_SA" : "en_US",
       alternateLocale: locale === "ar" ? ["en_US"] : ["ar_SA"],

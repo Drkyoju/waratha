@@ -71,7 +71,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
       <Button
         size="sm"
         className={cn(
-          "hidden sm:inline-flex",
+          "hidden lg:inline-flex touch-target",
           !scrolled &&
             "bg-waratha-primary text-primary-foreground hover:bg-waratha-primary/90"
         )}
@@ -86,6 +86,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
             size="icon"
             aria-label={dict.nav.openMenu}
             className={cn(
+              "touch-target",
               !scrolled && "border-white/25 bg-white/5 text-white hover:bg-white/10"
             )}
           >
@@ -104,7 +105,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
                 key={item.key}
                 href={`/${locale}${item.hash}`}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium hover:bg-muted"
+                className="touch-target rounded-lg px-3 py-3 text-sm font-medium hover:bg-muted"
               >
                 {dict.nav[item.key]}
               </Link>
@@ -112,7 +113,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
           </nav>
           <Separator className="my-4" />
           <Button
-            className="w-full"
+            className="touch-target w-full"
             onClick={() => {
               setOpen(false)
               openRequestAccess()

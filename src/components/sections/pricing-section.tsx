@@ -39,7 +39,7 @@ export function PricingSection({ dict }: PricingSectionProps) {
             <p className="text-sm font-medium tracking-wide text-waratha-accent uppercase">
               {dict.eyebrow}
             </p>
-            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-3xl md:text-4xl">
+            <h2 className="type-h2 mt-4 font-semibold tracking-tight text-white">
               {dict.title}
             </h2>
             <p className="mt-4 text-lg text-white/70">{dict.description}</p>

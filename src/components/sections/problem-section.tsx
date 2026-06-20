@@ -44,7 +44,7 @@ export function ProblemSection({ dict }: ProblemSectionProps) {
             <p className="mb-4 text-sm font-medium tracking-wide text-waratha-accent uppercase">
               {dict.eyebrow}
             </p>
-            <h2 className="text-2xl font-semibold leading-tight tracking-tight sm:text-3xl md:text-4xl lg:text-[2.75rem] lg:leading-[1.2]">
+            <h2 className="type-h2 font-semibold leading-tight tracking-tight">
               {dict.title}
             </h2>
           </motion.div>

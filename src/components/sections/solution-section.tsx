@@ -50,7 +50,7 @@ export function SolutionSection({ dict }: SolutionSectionProps) {
               <p className="text-sm font-medium tracking-wide text-waratha-accent uppercase">
                 {dict.eyebrow}
               </p>
-              <h2 className="text-2xl font-semibold leading-tight tracking-tight sm:text-3xl md:text-4xl">
+              <h2 className="type-h2 font-semibold leading-tight tracking-tight text-white">
                 {dict.title}
               </h2>
             </div>
@@ -78,7 +78,7 @@ export function SolutionSection({ dict }: SolutionSectionProps) {
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-0">
-                <div className="overflow-x-auto">
+                <div className="-mx-4 overflow-x-auto px-4 md:mx-0 md:px-0">
                   <table className="w-full min-w-[36rem] text-start text-sm">
                     <thead>
                       <tr className="border-b border-border/60 bg-muted/20">
@@ -105,7 +105,7 @@ export function SolutionSection({ dict }: SolutionSectionProps) {
                           key={row.variant}
                           className="border-b border-border/40 last:border-b-0"
                         >
-                          <td className="px-4 py-3 font-mono text-xs">
+                          <td className="font-dashboard-mono px-4 py-3 text-sm">
                             {row.variant}
                           </td>
                           <td className="px-4 py-3 font-medium">{row.gene}</td>
@@ -116,7 +116,7 @@ export function SolutionSection({ dict }: SolutionSectionProps) {
                             <Badge
                               variant="outline"
                               className={cn(
-                                "rounded-md text-[0.65rem]",
+                                "rounded-md text-sm",
                                 toneStyles[row.tone as keyof typeof toneStyles]
                               )}
                             >

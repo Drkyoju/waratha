@@ -144,11 +144,20 @@ html {
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-size: 1rem;
     line-height: 1.7;
   }
 
   [dir="rtl"] body {
     font-feature-settings: "kern" 1;
+    line-height: 1.8;
+    letter-spacing: 0;
+  }
+
+  [dir="rtl"] .font-arabic {
+    font-family: var(--font-arabic), system-ui, sans-serif;
+    line-height: 1.8;
+    letter-spacing: 0;
   }
 
   .font-arabic {
@@ -159,6 +168,11 @@ html {
     font-family: var(--font-english), system-ui, sans-serif;
   }
 
+  .font-dashboard-mono {
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: 0;
+  }
+
   [dir="rtl"] .tabular-nums,
   [dir="rtl"] .font-mono {
     font-family: var(--font-arabic), ui-monospace, monospace;
@@ -166,6 +180,21 @@ html {
 }
 
 @layer utilities {
+  .type-h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.15;
+  }
+
+  .type-h2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    line-height: 1.2;
+  }
+
+  .touch-target {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+  }
+
   .hero-grain {
     background-image:
       radial-gradient(
@@ -196,18 +225,22 @@ html {
   }
 
   .hero-dna-strand-25 {
+    will-change: transform;
     animation: hero-dna-rise 25s ease-in-out infinite alternate;
   }
 
   .hero-dna-strand-30 {
+    will-change: transform;
     animation: hero-dna-rise 30s ease-in-out infinite alternate;
   }
 
   .hero-dna-strand-35 {
+    will-change: transform;
     animation: hero-dna-rise 35s ease-in-out infinite alternate;
   }
 
   .hero-dashboard-float {
+    will-change: transform;
     animation: hero-card-float 4s ease-in-out infinite;
   }
 
