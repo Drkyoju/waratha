@@ -1,7 +1,7 @@
 "use client"
 
-import { animate, motion, useInView } from "framer-motion"
-import { useEffect, useRef, useState } from "react"
+import { animate, motion } from "framer-motion"
+import { useEffect, useState } from "react"
 
 import { Container } from "@/components/layout/container"
 import { type Locale } from "@/i18n/config"
@@ -24,27 +24,36 @@ type StatItem = Dictionary["statsBar"]["items"][number]
 function AnimatedStatValue({
   item,
   locale,
-  inView,
+  started,
 }: {
   item: StatItem
   locale: Locale
-  inView: boolean
+  started: boolean
 }) {
-  const [display, setDisplay] = useState(0)
+  const [display, setDisplay] = useState(started ? item.value : 0)
   const decimals = item.decimals ?? 0
 
   useEffect(() => {
-    if (!inView) return
+    if (!started) return
+
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+
+    if (prefersReduced) {
+      setDisplay(item.value)
+      return
+    }
 
     setDisplay(0)
     const controls = animate(0, item.value, {
-      duration: 2,
+      duration: 1.8,
       ease: "easeOut",
       onUpdate: (latest) => setDisplay(latest),
     })
 
     return () => controls.stop()
-  }, [inView, item.value, locale])
+  }, [started, item.value, locale])
 
   return (
     <>
@@ -58,13 +67,13 @@ function AnimatedStatValue({
 }
 
 export function StatsBar({ locale, dict }: StatsBarProps) {
-  const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true, amount: 0.15 })
+  const [started, setStarted] = useState(false)
 
   return (
-    <section
-      ref={ref}
-      className="bg-waratha-primary py-10 text-white sm:py-12 md:py-14"
+    <motion.section
+      onViewportEnter={() => setStarted(true)}
+      viewport={{ once: true, amount: 0.15 }}
+      className="scroll-mt-header bg-gradient-to-br from-waratha-primary via-[#0b5238] to-[#094a32] py-10 text-white sm:py-12 md:py-14"
     >
       <Container size="wide">
         <motion.div
@@ -84,8 +93,12 @@ export function StatsBar({ locale, dict }: StatsBarProps) {
                   "lg:border-e lg:border-white/20"
               )}
             >
-              <p className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
-                <AnimatedStatValue item={item} locale={locale} inView={inView} />
+              <p className="text-2xl font-bold tracking-tight tabular-nums sm:text-3xl md:text-4xl">
+                <AnimatedStatValue
+                  item={item}
+                  locale={locale}
+                  started={started}
+                />
               </p>
               <p className="mt-2 text-sm leading-relaxed text-white/80 sm:text-base">
                 {item.label}
@@ -94,6 +107,6 @@ export function StatsBar({ locale, dict }: StatsBarProps) {
           ))}
         </motion.div>
       </Container>
-    </section>
+    </motion.section>
   )
 }

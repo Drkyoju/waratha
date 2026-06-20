@@ -5,6 +5,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-total);
 }
 
 :root {
@@ -50,6 +51,16 @@ html {
   --sidebar-accent-foreground: var(--waratha-secondary);
   --sidebar-border: #d5ddd0;
   --sidebar-ring: var(--waratha-primary);
+
+  --header-locale-bar: 2.25rem;
+  --header-main: 3.5rem;
+  --header-total: calc(var(--header-locale-bar) + var(--header-main));
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-main: 4rem;
+  }
 }
 
 .dark {
@@ -195,6 +206,10 @@ html {
     min-width: 2.75rem;
   }
 
+  .scroll-mt-header {
+    scroll-margin-top: var(--header-total);
+  }
+
   .hero-grain {
     background-image:
       radial-gradient(
@@ -225,22 +240,18 @@ html {
   }
 
   .hero-dna-strand-25 {
-    will-change: transform;
     animation: hero-dna-rise 25s ease-in-out infinite alternate;
   }
 
   .hero-dna-strand-30 {
-    will-change: transform;
     animation: hero-dna-rise 30s ease-in-out infinite alternate;
   }
 
   .hero-dna-strand-35 {
-    will-change: transform;
     animation: hero-dna-rise 35s ease-in-out infinite alternate;
   }
 
   .hero-dashboard-float {
-    will-change: transform;
     animation: hero-card-float 4s ease-in-out infinite;
   }
 

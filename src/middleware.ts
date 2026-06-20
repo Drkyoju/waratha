@@ -12,9 +12,11 @@ export function middleware(request: NextRequest) {
   const pathnameLocale = getLocaleFromPathname(pathname)
 
   if (pathnameLocale) {
-    const response = NextResponse.next()
-    response.headers.set("x-locale", pathnameLocale)
-    return response
+    const requestHeaders = new Headers(request.headers)
+    requestHeaders.set("x-locale", pathnameLocale)
+    return NextResponse.next({
+      request: { headers: requestHeaders },
+    })
   }
 
   const locale = defaultLocale

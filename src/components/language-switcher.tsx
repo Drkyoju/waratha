@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { useTransition } from "react"
+import { useEffect, useState, useTransition } from "react"
 
 import { type Locale } from "@/i18n/config"
 import { type Dictionary } from "@/i18n/dictionaries"
@@ -12,6 +12,7 @@ type LanguageSwitcherProps = {
   locale: Locale
   labels: Dictionary["nav"]
   inverted?: boolean
+  compact?: boolean
 }
 
 function buildLocalizedHref(pathname: string, nextLocale: Locale, hash = "") {
@@ -25,16 +26,26 @@ function buildLocalizedHref(pathname: string, nextLocale: Locale, hash = "") {
   return `/${segments.join("/")}${hash}`
 }
 
-export function LanguageSwitcher({ locale, labels, inverted }: LanguageSwitcherProps) {
+export function LanguageSwitcher({
+  locale,
+  labels,
+  inverted,
+  compact,
+}: LanguageSwitcherProps) {
   const pathname = usePathname()
   const router = useRouter()
   const [isPending, startTransition] = useTransition()
+  const [hash, setHash] = useState("")
+
+  useEffect(() => {
+    setHash(window.location.hash)
+  }, [pathname])
 
   function switchLocale(nextLocale: Locale) {
     if (nextLocale === locale || isPending) return
 
-    const hash = typeof window !== "undefined" ? window.location.hash : ""
-    const href = buildLocalizedHref(pathname, nextLocale, hash)
+    const currentHash = window.location.hash
+    const href = buildLocalizedHref(pathname, nextLocale, currentHash)
 
     startTransition(() => {
       router.push(href, { scroll: false })
@@ -47,7 +58,8 @@ export function LanguageSwitcher({ locale, labels, inverted }: LanguageSwitcherP
       aria-label={`${labels.languageArabic} / ${labels.languageEnglish}`}
       aria-busy={isPending}
       className={cn(
-        "inline-flex items-center rounded-full border p-1 transition-opacity",
+        "inline-flex items-center rounded-full border transition-opacity",
+        compact ? "p-0.5" : "p-1",
         isPending && "pointer-events-none opacity-60",
         inverted
           ? "border-white/20 bg-white/10"
@@ -57,7 +69,6 @@ export function LanguageSwitcher({ locale, labels, inverted }: LanguageSwitcherP
       {(["ar", "en"] as const).map((code) => {
         const isActive = locale === code
         const label = code === "ar" ? labels.languageArabic : labels.languageEnglish
-        const hash = typeof window !== "undefined" ? window.location.hash : ""
         const href = buildLocalizedHref(pathname, code, hash)
 
         return (
@@ -72,7 +83,10 @@ export function LanguageSwitcher({ locale, labels, inverted }: LanguageSwitcherP
             }}
             aria-pressed={isActive}
             className={cn(
-              "touch-target min-h-10 rounded-full px-3 py-1.5 text-sm font-medium transition-colors sm:min-h-11 sm:py-2",
+              "rounded-full font-medium transition-colors",
+              compact
+                ? "min-h-8 px-2.5 py-1 text-xs"
+                : "touch-target min-h-10 px-3 py-1.5 text-sm sm:min-h-11 sm:py-2",
               isActive
                 ? inverted
                   ? "bg-white text-waratha-secondary shadow-sm"

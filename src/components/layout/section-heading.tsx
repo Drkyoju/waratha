@@ -24,7 +24,12 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? (
-        <p className="text-sm font-medium tracking-wide text-waratha-accent uppercase">
+        <p
+          className={cn(
+            "inline-flex w-fit items-center rounded-full border border-waratha-accent/30 bg-waratha-accent/10 px-3 py-1 text-xs font-semibold tracking-wide text-waratha-accent uppercase",
+            align === "center" && "mx-auto"
+          )}
+        >
           {eyebrow}
         </p>
       ) : null}

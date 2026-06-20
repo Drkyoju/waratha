@@ -24,7 +24,7 @@ export function HospitalsSection({ dict }: HospitalsSectionProps) {
   const { openRequestAccess } = useRequestAccess()
 
   return (
-    <section id="hospitals" className="bg-waratha-bg py-16 sm:py-20 md:py-28">
+    <section id="hospitals" className="scroll-mt-header bg-waratha-bg py-16 sm:py-20 md:py-28">
       <Container>
         <motion.div
           variants={staggerContainerVariants}

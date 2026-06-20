@@ -41,7 +41,7 @@ export function ProblemSection({ dict }: ProblemSectionProps) {
             variants={fadeUpItemVariants}
             className="mx-auto mb-14 max-w-3xl text-center md:mb-16"
           >
-            <p className="mb-4 text-sm font-medium tracking-wide text-waratha-accent uppercase">
+            <p className="mb-4 inline-flex w-fit items-center rounded-full border border-waratha-accent/30 bg-waratha-accent/10 px-3 py-1 text-xs font-semibold tracking-wide text-waratha-accent uppercase">
               {dict.eyebrow}
             </p>
             <h2 className="type-h2 font-semibold leading-tight tracking-tight">

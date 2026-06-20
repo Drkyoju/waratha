@@ -15,7 +15,7 @@ export function ContactSection({ dict, contactEmail }: ContactSectionProps) {
   const { openRequestAccess } = useRequestAccess()
 
   return (
-    <section id="contact" className="bg-waratha-bg py-16 sm:py-20 md:py-28">
+    <section id="contact" className="scroll-mt-header bg-waratha-bg py-16 sm:py-20 md:py-28">
       <Container size="narrow">
         <div className="mx-auto max-w-2xl space-y-8 text-center">
           <div className="space-y-4">

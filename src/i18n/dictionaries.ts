@@ -2,9 +2,9 @@ import { type Locale } from "@/i18n/config"
 
 const ar = {
   meta: {
-    title: "وراثة — تفسير متغيرات الجينوم بالذكاء الاصطناعي للوراثة السعودية",
+    title: "وراثة — تفسير متغيرات الجينوم بالذكاء الاصطناعي للجينوميات السريرية السعودية",
     description:
-      "منصة سعودية للذكاء الاصطناعي تساعد أخصائيي الوراثة السريرية في المستشفيات السعودية على تفسير المتغيرات الجينومية — معايَرة لبيانات السكان السعوديين، متوافقة مع نظام حماية البيانات.",
+      "منصة سعودية للذكاء الاصطناعي تساعد أخصائيي الوراثة السريرية في المستشفيات السعودية على تفسير المتغيرات الجينومية — مُعايَرة لبيانات السكان السعوديين، ومتوافقة مع نظام حماية البيانات الشخصية (PDPL).",
   },
   brand: {
     name: "وراثة",
@@ -21,6 +21,7 @@ const ar = {
     openMenu: "فتح القائمة",
     closeMenu: "إغلاق القائمة",
     skipToContent: "تخطي إلى المحتوى",
+    languageLabel: "اللغة",
     languageArabic: "العربية",
     languageEnglish: "English",
   },
@@ -28,13 +29,13 @@ const ar = {
     title:
       "تفسير متغيرات الجينوم بالذكاء الاصطناعي — مصمم للسعودية",
     subtitle:
-      "وراثة تحوّل نتائج التسلسل الجيني إلى قرارات سريرية في دقائق — معايَر على بيانات السكان السعوديين، متوافق مع نظام حماية البيانات.",
+      "وراثة تحوّل نتائج التسلسل الجيني إلى قرارات سريرية في دقائق — مُعايَرة لبيانات السكان السعوديين، ومتوافقة مع نظام حماية البيانات الشخصية (PDPL).",
     primaryCta: "اطلب الوصول المبكر",
     secondaryCta: "شاهد العرض التوضيحي",
     scrollHint: "انتقل للأسفل",
     dashboard: {
       title: "لوحة التفسير السريري",
-      panelTitle: "وراثة | Waratha Clinical Panel",
+      panelTitle: "وراثة | اللوحة السريرية",
       patientEntry: "معرف المريض: SA-0042 | الجين: HADHA | المتغير: c.1528G>A",
       statusBadge: "⚠ أُعيد تصنيفه: مرجح أن يكون مرضياً",
       confidenceLabel: "مستوى الثقة",
@@ -48,28 +49,28 @@ const ar = {
   },
   problem: {
     eyebrow: "المشكلة",
-    title: "متغيرات المعنى المجهول تعيق التشخيص",
+    title: "متغيرات ذات معنى مجهول (VUS) تعيق التشخيص",
     cards: [
       {
         icon: "clock",
         title: "رحلة تشخيص تستغرق 5.6 سنوات",
         stat: "5.6 سنة",
         description:
-          "تنتظر عائلة المرض النادر السعودي في المتوسط 5.6 سنوات للحصول على تشخيص — بينما تبقى المتغيرات دون حل.",
+          "تنتظر عائلات مرضى الأمراض النادرة في السعودية في المتوسط 5.6 سنوات للحصول على تشخيص — بينما تبقى المتغيرات دون حل.",
       },
       {
         icon: "database",
         title: "قواعد البيانات الغربية تفتقد المتغيرات السعودية",
         stat: "56%",
         description:
-          "56% من مرضى الأمراض الجينية السعوديين من عائلات ذات زواج أقارب. الأدوات العالمية لم تُبنَ لهذا السكان.",
+          "56% من مرضى الأمراض الجينية السعوديين من عائلات ذات زواج أقارب. الأدوات العالمية لم تُصمَّم لهذا المجتمع السكاني.",
       },
       {
         icon: "alert-triangle",
         title: "7,500 متغير سعودي بلا أداة متكاملة",
         stat: "+7,500",
         description:
-          "وثّق البرنامج السعودي للجينوم 7,500 متغير مرضي — لكن لا توجد أداة دعم قرار سريري تستخدمها.",
+          "وثّق البرنامج السعودي للجينوم 7,500 متغير مرضي — لكن لا توجد أداة دعم قرار سريري تستفيد منها.",
       },
     ],
   },
@@ -120,20 +121,20 @@ const ar = {
         number: "2",
         title: "الذكاء الاصطناعي يقيّم كل متغير",
         description:
-          "تُعلّق وراثة كل متغير وتقيّمه مقابل قواعد البيانات العالمية و7,500 متغير مرضي موثّق في البرنامج السعودي للجينوم.",
+          "تُضيف وراثة التعليقات التوضيحية لكل متغير وتقيّمه مقابل قواعد البيانات العالمية ولـ 7,500 متغير مرضي موثّق في البرنامج السعودي للجينوم.",
       },
       {
         icon: "file-check",
         number: "3",
-        title: "تقرير سريري جاهز بالعربية",
+        title: "تقرير سريري ثنائي اللغة جاهز للطبيب",
         description:
-          "تقرير مرتّب ومتوافق مع معايير ACMG يبرز المتغيرات المرجح أن تكون مرضية — بالعربية والإنجليزية — ليؤكدها أخصائي الوراثة.",
+          "تقرير مرتّب ومتوافق مع معايير ACMG يبرز المتغيرات المرجح أن تكون مرضية — بالعربية والإنجليزية — لمراجعتها وتأكيدها من قِبل أخصائي الوراثة.",
       },
     ],
   },
   solution: {
     eyebrow: "حلنا",
-    title: "سعودي المنشأ. عربي أولاً. متوافق مع نظام حماية البيانات.",
+    title: "سعودية المنشأ. عربية أولاً. متوافقة مع نظام حماية البيانات الشخصية.",
     features: [
       "دمج ترددات الأليل من البرنامج السعودي للجينوم",
       "مواءمة تصنيف المتغيرات مع معايير ACMG/AMP",
@@ -215,7 +216,7 @@ const ar = {
     popularBadge: "الأكثر طلباً",
     plans: [
       {
-        name: "بيلوت",
+        name: "تجريبي",
         price: "مجاني",
         subtitle: "لأول 3 شركاء مستشفيات",
         features: [
@@ -257,6 +258,7 @@ const ar = {
         description:
           "أظهر AI-MARRVEL أن أولوية المتغيرات المعتمدة على التعلم الآلي تحقق 78% دقة تشخيصية في أفضل 5 نتائج لاضطرابات مندلية — مما يؤسس الجدوى السريرية للذكاء الاصطناعي في التشخيص الجينومي.",
         linkLabel: "اقرأ الدراسة ←",
+        href: "https://ai.nejm.org/doi/full/10.1056/AIoa2300090",
       },
       {
         source: "BMJ Journal of Medical Genetics",
@@ -266,15 +268,17 @@ const ar = {
         description:
           "إعادة التصنيف باستخدام ترددات أليل مطابقة للسكان تحسّن النتائج التشخيصية بشكل ملموس — الأساس العلمي لطبقة المرجع السعودي في وراثة.",
         linkLabel: "اقرأ الدراسة ←",
+        href: "https://jmg.bmj.com/",
       },
       {
         source: "مدينة الملك سعود الطبية",
         icon: "users",
-        title: "عبء المتغيرات ذات المعنى المجهول موثّق لدى 1,080 مريض سعودي",
+        title: "عبء متغيرات VUS موثّق لدى 1,080 مريض سعودي",
         statBadge: "1,080 مريض",
         description:
           "دراسة على مجموعة سعودية أكدت المعدل المرتفع للمتغيرات ذات المعنى المجهول لدى مرضى الأمراض الجينية — المشكلة السريرية المباشرة التي تحلها وراثة.",
         linkLabel: "اقرأ الدراسة ←",
+        href: "https://pubmed.ncbi.nlm.nih.gov/?term=variant+of+uncertain+significance+saudi+arabia",
       },
       {
         source: "البرنامج السعودي للجينوم",
@@ -282,8 +286,9 @@ const ar = {
         title: "7,500 متغير مرضي سعودي موثّق",
         statBadge: "+63,000 عينة",
         description:
-          "سلّم البرنامج السعودي للجينوم أكثر من 63,000 عينة ووثّق 7,500 متغيراً مرضياً — لتشكيل مجموعة المرجع التي تغذي طبقة ترددات الأليل السعودية في وراثة.",
+          "حلَّل البرنامج السعودي للجينوم أكثر من 63,000 عينة جينومياً ووثّق 7,500 متغيراً مرضياً — لتشكيل مجموعة المرجع التي تغذي طبقة ترددات الأليل السعودية في وراثة.",
         linkLabel: "اعرف المزيد ←",
+        href: "https://shgp.kacst.edu.sa/",
       },
     ],
   },
@@ -294,7 +299,7 @@ const ar = {
       {
         question: "هل وراثة معتمدة من هيئة الغذاء والدواء؟",
         answer:
-          "وراثة أداة دعم قرار سريري تحافظ على وجود أخصائي وراثة مرخّص في حلقة القرار. نسعى حالياً لتسجيل إشعار SaMD لدى هيئة الغذاء والدواء.",
+          "وراثة أداة دعم قرار سريري تبقي أخصائي الوراثة المرخّص في دائرة اتخاذ القرار. نسعى حالياً لتسجيل إشعار البرمجيات كجهاز طبي (SaMD) لدى هيئة الغذاء والدواء السعودية.",
       },
       {
         question: "أين يُخزَّن بيانات المرضى؟",
@@ -318,14 +323,14 @@ const ar = {
     ],
   },
   capabilities: {
-    title: "قدرات سريرية مصممة للوراثة",
+    title: "قدرات سريرية مصممة لأخصائيي الوراثة",
     description:
       "أدوات دقيقة وموثوقة تدعم قرارات التشخيص الجيني في بيئة المستشفى السعودي.",
     items: [
       {
-        title: "تفسير معاير للسعودية",
+        title: "تفسير مُعايَر للسياق السعودي",
         description:
-          "نماذج مُدرَّبة على ترددات السكان المحلي وتصنيفات ACMG لتقليل النتائج الكاذبة.",
+          "نماذج مُدرَّبة على ترددات السكان المحلي وتصنيفات ACMG لتقليل النتائج الإيجابية الكاذبة.",
       },
       {
         title: "مسارات عمل موحدة",
@@ -335,7 +340,7 @@ const ar = {
       {
         title: "شفافية سريرية",
         description:
-          "مصادر الأدلة، درجات الثقة، وسياق كل متغير معروضة بوضوح لدعم القرار.",
+          "مصادر الأدلة ودرجات الثقة وسياق كل متغير معروض بوضوح لدعم القرار.",
       },
     ],
   },
@@ -365,7 +370,7 @@ const ar = {
     title: "ثقة سريرية بمعايير سعودية",
     description:
       "وراثة مبنية للبيئة السعودية — دقة، خصوصية، وامتثال للمتطلبات المحلية.",
-    badges: ["معايرة سعودية", "خصوصية البيانات", "امتثال سريري", "دعم عربي/إنجليزي"],
+    badges: ["مُعايَرة سعودية", "خصوصية البيانات", "امتثال سريري", "دعم بالعربية والإنجليزية"],
     faqTitle: "أسئلة شائعة",
     faq: [
       {
@@ -388,7 +393,7 @@ const ar = {
   contactSection: {
     title: "تواصل مع فريق وراثة",
     description:
-      "هل أنت مستعد لتحويل تفسير المتغيرات في مستشفاك؟ تواصل معنا أو اطلب الوصول المبكر.",
+      "هل أنتم مستعدون لتحسين تفسير المتغيرات في مستشفاكم؟ تواصلوا معنا أو اطلبوا الوصول المبكر.",
     email: "contact@waratha.sa",
     cta: "اطلب الوصول",
     badges: [
@@ -399,7 +404,7 @@ const ar = {
   },
   requestAccessModal: {
     title: "اطلب الوصول",
-    description: "أخبرنا عن مؤسستك وسنتواصل معك خلال 48 ساعة.",
+    description: "أخبرنا عن مؤسستكم وسنتواصل معكم خلال 48 ساعة.",
     nameLabel: "الاسم",
     namePlaceholder: "د. سارة العتيبي",
     institutionLabel: "المستشفى / المؤسسة",
@@ -419,7 +424,7 @@ const ar = {
     close: "إغلاق",
     roles: [
       { value: "clinical-geneticist", label: "أخصائي وراثة سريري" },
-      { value: "molecular-pathologist", label: "أخصائي أمراض جزيئية" },
+      { value: "molecular-pathologist", label: "أخصائي علم الأمراض الجزيئية" },
       { value: "lab-director", label: "مدير مختبر" },
       { value: "other", label: "أخرى" },
     ],
@@ -433,10 +438,10 @@ const ar = {
   demoModal: {
     title: "شاهد العرض التوضيحي",
     placeholder:
-      "العرض التوضيحي قادم قريباً — اطلب الوصول المبكر للحصول على جولة مباشرة",
+      "العرض التوضيحي متاح قريباً — اطلب الوصول المبكر لحجز جولة مباشرة",
   },
   footer: {
-    tagline: "الذكاء الاصطناعي الجيني للسعودية",
+    tagline: "تفسير جينومي بالذكاء الاصطناعي — للسعودية",
     linksTitle: "روابط",
     legalTitle: "قانوني",
     privacy: "سياسة الخصوصية",
@@ -533,15 +538,15 @@ const ar = {
   },
   toast: {
     requestReceived:
-      "تم استلام طلبك — سنتواصل معك خلال 48 ساعة",
+      "تم استلام طلبكم — سنتواصل معكم خلال 48 ساعة",
   },
 }
 
 const en = {
   meta: {
-    title: "Waratha — AI Variant Interpretation for Saudi Genetics",
+    title: "Waratha — AI Variant Interpretation for Saudi Clinical Genomics",
     description:
-      "A Saudi-native AI platform helping clinical geneticists in Saudi hospitals interpret genomic variants — calibrated to Saudi population data, PDPL-compliant, Arabic-first.",
+      "A Saudi-native AI platform helping clinical geneticists in Saudi hospitals interpret genomic variants — Saudi-calibrated to population data, PDPL-compliant, and Arabic-first.",
   },
   brand: {
     name: "Waratha",
@@ -558,54 +563,55 @@ const en = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     skipToContent: "Skip to content",
+    languageLabel: "Language",
     languageArabic: "العربية",
     languageEnglish: "English",
   },
   hero: {
     title: "AI Variant Interpretation Built for Saudi Genomics",
     subtitle:
-      "Waratha turns exome sequencing results into clinical decisions in minutes — calibrated to Saudi population data, PDPL-compliant, Arabic-first.",
+      "Waratha turns exome sequencing results into clinical decisions in minutes — Saudi-calibrated to population data, PDPL-compliant, and Arabic-first.",
     primaryCta: "Request Early Access",
     secondaryCta: "Watch Demo",
     scrollHint: "Scroll down",
     dashboard: {
       title: "Clinical interpretation panel",
-      panelTitle: "وراثة | Waratha Clinical Panel",
+      panelTitle: "Waratha | Clinical Panel",
       patientEntry: "Patient ID: SA-0042 | Gene: HADHA | Variant: c.1528G>A",
       statusBadge: "⚠ Reclassified: Likely Pathogenic",
       confidenceLabel: "Confidence",
       confidenceValue: "94%",
       stats: {
         variants: "7,500+ Saudi variants",
-        consanguinity: "56% consanguinity population",
-        odyssey: "5.6 yr avg diagnostic odyssey",
+        consanguinity: "56% consanguinity rate",
+        odyssey: "5.6-year avg. diagnostic odyssey",
       },
     },
   },
   problem: {
     eyebrow: "The Problem",
-    title: "Variants of Unknown Significance are blocking diagnosis",
+    title: "Variants of uncertain significance (VUS) are delaying diagnosis",
     cards: [
       {
         icon: "clock",
         title: "5.6-Year Diagnostic Odyssey",
         stat: "5.6 yrs",
         description:
-          "The average Saudi rare disease family waits 5.6 years for a diagnosis — while variants sit unresolved.",
+          "Saudi families affected by rare disease wait an average of 5.6 years for a diagnosis — while variants sit unresolved.",
       },
       {
         icon: "database",
         title: "Western Databases Miss Saudi Variants",
         stat: "56%",
         description:
-          "56% of Saudi genetic disease patients come from consanguineous families. Global tools were not built for this population.",
+          "56% of Saudi genetic disease patients come from consanguineous families. Global tools were not designed for this population.",
       },
       {
         icon: "alert-triangle",
         title: "7,500 Saudi Variants, No Integrated Tool",
         stat: "7,500+",
         description:
-          "The Saudi Genome Program documented 7,500 pathogenic variants — but no clinical decision support tool uses them.",
+          "The Saudi Genome Program documented 7,500 pathogenic variants — but no clinical decision-support tool incorporates them.",
       },
     ],
   },
@@ -649,21 +655,21 @@ const en = {
         number: "1",
         title: "Upload Exome VCF",
         description:
-          "The lab uploads the patient's variant call file directly into Waratha's PDPL-compliant Saudi-resident platform.",
+          "The lab uploads the patient's variant call file directly into Waratha's PDPL-compliant platform hosted in Saudi Arabia.",
       },
       {
         icon: "cpu",
         number: "2",
         title: "AI Scores Every Variant",
         description:
-          "Waratha annotates and scores each variant against global databases AND the Saudi Genome Program's 7,500 documented pathogenic variants.",
+          "Waratha annotates and scores each variant against global databases and the Saudi Genome Program's 7,500 documented pathogenic variants.",
       },
       {
         icon: "file-check",
         number: "3",
-        title: "Clinician-Ready Arabic Report",
+        title: "Clinician-ready bilingual report",
         description:
-          "A ranked, ACMG-aligned report highlights likely pathogenic variants — in Arabic and English — for the geneticist to confirm.",
+          "A ranked, ACMG-aligned report highlights likely pathogenic variants — in Arabic and English — for review and confirmation by a clinical geneticist.",
       },
     ],
   },
@@ -793,6 +799,7 @@ const en = {
         description:
           "AI-MARRVEL demonstrated that ML-based variant prioritization achieves 78% top-5 diagnostic accuracy on Mendelian disorders — establishing the clinical viability of AI in genomic diagnosis.",
         linkLabel: "Read Study →",
+        href: "https://ai.nejm.org/doi/full/10.1056/AIoa2300090",
       },
       {
         source: "BMJ Journal of Medical Genetics",
@@ -802,6 +809,7 @@ const en = {
         description:
           "Reclassification using population-matched allele frequencies demonstrably improves diagnostic outcomes — the scientific basis for Waratha's Saudi-specific reference layer.",
         linkLabel: "Read Study →",
+        href: "https://jmg.bmj.com/",
       },
       {
         source: "King Saud Medical City",
@@ -809,8 +817,9 @@ const en = {
         title: "VUS Burden Documented in 1,080 Saudi Patients",
         statBadge: "1,080 patients",
         description:
-          "A Saudi-cohort study confirmed the high rate of unresolved Variants of Unknown Significance in Saudi genetic disease patients — the direct clinical problem Waratha solves.",
+          "A Saudi-cohort study confirmed the high burden of variants of uncertain significance (VUS) in Saudi genetic disease patients — the direct clinical problem Waratha solves.",
         linkLabel: "Read Study →",
+        href: "https://pubmed.ncbi.nlm.nih.gov/?term=variant+of+uncertain+significance+saudi+arabia",
       },
       {
         source: "Saudi Genome Program",
@@ -820,6 +829,7 @@ const en = {
         description:
           "The Saudi Genome Program has sequenced over 63,000 samples and documented 7,500 pathogenic variants — forming the reference dataset that powers Waratha's Saudi allele-frequency layer.",
         linkLabel: "Learn More →",
+        href: "https://shgp.kacst.edu.sa/",
       },
     ],
   },
@@ -830,7 +840,7 @@ const en = {
       {
         question: "Is Waratha approved by SFDA?",
         answer:
-          "Waratha is a clinical decision-support tool that keeps a licensed geneticist in the loop. We are pursuing SFDA SaMD notification registration.",
+          "Waratha is a clinical decision-support tool that keeps a licensed clinical geneticist in the decision loop. We are pursuing SFDA software as a medical device (SaMD) notification.",
       },
       {
         question: "Where is patient data stored?",
@@ -924,12 +934,12 @@ const en = {
   contactSection: {
     title: "Get in touch with Waratha",
     description:
-      "Ready to transform variant interpretation at your hospital? Reach out or request early access.",
+      "Ready to improve variant interpretation at your hospital? Reach out or request early access.",
     email: "contact@waratha.sa",
     cta: "Request Access",
     badges: [
       "🔒 PDPL Compliant",
-      "🇸🇦 Saudi-Resident Data",
+      "🇸🇦 Data hosted in Saudi Arabia",
       "🧬 Saudi Genome Program Aligned",
     ],
   },
@@ -972,7 +982,7 @@ const en = {
       "Demo coming soon — request early access for a live walkthrough",
   },
   footer: {
-    tagline: "AI Genomics for Saudi Arabia",
+    tagline: "AI-powered genomic interpretation for Saudi Arabia",
     linksTitle: "Links",
     legalTitle: "Legal",
     privacy: "Privacy Policy",

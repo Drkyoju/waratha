@@ -43,8 +43,11 @@ export function DemoModal({
         <div className="space-y-6">
           <div className="relative aspect-video overflow-hidden rounded-xl bg-[#1a2a22]">
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
-              <span className="flex size-14 items-center justify-center rounded-full bg-white/10 text-white/80">
-                <Play className="size-6 fill-current" aria-hidden="true" />
+              <span
+                className="flex size-14 items-center justify-center rounded-full bg-white/10 text-white/80"
+                aria-hidden="true"
+              >
+                <Play className="size-6 fill-current" />
               </span>
               <p className="max-w-sm text-sm leading-relaxed text-white/65">
                 {dict.placeholder}

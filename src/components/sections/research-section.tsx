@@ -34,7 +34,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export function ResearchSection({ dict }: ResearchSectionProps) {
   return (
-    <section id="research" className="bg-waratha-bg py-16 sm:py-20 md:py-28">
+    <section id="research" className="scroll-mt-header bg-waratha-bg py-16 sm:py-20 md:py-28">
       <Container>
         <motion.div
           variants={staggerContainerVariants}
@@ -61,10 +61,10 @@ export function ResearchSection({ dict }: ResearchSectionProps) {
 
               return (
                 <motion.div key={card.title} variants={fadeUpItemVariants}>
-                  <Card className="flex h-full flex-col border-border/60 bg-white shadow-waratha">
+                  <Card className="group flex h-full flex-col border-border/60 bg-white shadow-waratha transition-all duration-300 hover:-translate-y-1 hover:border-waratha-primary/25 hover:shadow-lg">
                     <CardContent className="flex flex-1 flex-col gap-4 pt-6">
                       <div className="flex items-start justify-between gap-3">
-                        <div className="flex size-11 items-center justify-center rounded-xl bg-waratha-primary/10 text-waratha-primary">
+                        <div className="flex size-11 items-center justify-center rounded-xl bg-waratha-primary/10 text-waratha-primary transition-colors group-hover:bg-waratha-primary group-hover:text-white">
                           {Icon ? (
                             <Icon className="size-5" aria-hidden="true" />
                           ) : null}
@@ -91,8 +91,10 @@ export function ResearchSection({ dict }: ResearchSectionProps) {
                       </p>
 
                       <Link
-                        href="#"
-                        className="text-sm font-medium text-waratha-primary transition-colors hover:text-waratha-primary/80"
+                        href={card.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-sm font-medium text-waratha-primary transition-colors hover:text-waratha-primary/80"
                       >
                         {card.linkLabel}
                       </Link>

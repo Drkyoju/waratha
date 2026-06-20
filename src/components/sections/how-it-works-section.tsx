@@ -22,40 +22,11 @@ const iconMap: Record<string, LucideIcon> = {
   "file-check": FileCheck,
 }
 
-function StepContent({
-  step,
-}: {
-  step: Dictionary["howItWorks"]["steps"][number]
-}) {
-  const Icon = iconMap[step.icon]
-
-  return (
-    <motion.div
-      variants={fadeUpItemVariants}
-      className="relative flex flex-col items-center text-center lg:items-start lg:text-start"
-    >
-      <div className="relative z-10 mb-5 flex size-14 items-center justify-center rounded-full border-2 border-waratha-primary bg-white shadow-waratha">
-        <span className="absolute -top-1 -end-1 flex size-6 items-center justify-center rounded-full bg-waratha-primary text-xs font-bold text-white">
-          {step.number}
-        </span>
-        {Icon ? (
-          <Icon className="size-6 text-waratha-primary" aria-hidden="true" />
-        ) : null}
-      </div>
-
-      <h3 className="mb-3 text-lg font-semibold text-waratha-text">{step.title}</h3>
-      <p className="max-w-sm text-sm leading-relaxed text-waratha-muted">
-        {step.description}
-      </p>
-    </motion.div>
-  )
-}
-
 export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
   return (
     <section
       id="how-it-works"
-      className="overflow-hidden bg-waratha-bg py-16 sm:py-20 md:py-28"
+      className="scroll-mt-header overflow-hidden bg-waratha-bg py-16 sm:py-20 md:py-28"
     >
       <Container>
         <motion.div
@@ -74,65 +45,52 @@ export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
             />
           </motion.div>
 
-          {/* Mobile: vertical stepper */}
-          <motion.div
+          <motion.ol
             variants={staggerContainerVariants}
-            className="relative lg:hidden"
+            className="relative grid list-none grid-cols-1 gap-12 p-0 lg:grid-cols-3 lg:gap-8"
           >
             <div
               aria-hidden="true"
-              className="absolute top-7 bottom-7 start-7 w-px bg-waratha-primary/25"
+              className="absolute top-7 bottom-7 start-7 w-px bg-waratha-primary/25 lg:hidden"
             />
-            <div className="space-y-12">
-              {dict.steps.map((step) => {
-                const Icon = iconMap[step.icon]
-
-                return (
-                  <motion.div
-                    key={step.title}
-                    variants={fadeUpItemVariants}
-                    className="relative flex gap-5 ps-2"
-                  >
-                    <div className="relative z-10 flex size-14 shrink-0 items-center justify-center rounded-full border-2 border-waratha-primary bg-white shadow-waratha">
-                      <span className="absolute -top-1 -end-1 flex size-6 items-center justify-center rounded-full bg-waratha-primary text-xs font-bold text-white">
-                        {step.number}
-                      </span>
-                      {Icon ? (
-                        <Icon
-                          className="size-6 text-waratha-primary"
-                          aria-hidden="true"
-                        />
-                      ) : null}
-                    </div>
-                    <div className="pt-2">
-                      <h3 className="mb-2 text-lg font-semibold text-waratha-text">
-                        {step.title}
-                      </h3>
-                      <p className="text-sm leading-relaxed text-waratha-muted">
-                        {step.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </motion.div>
-
-          {/* Desktop: horizontal stepper */}
-          <motion.div
-            variants={staggerContainerVariants}
-            className="relative hidden lg:block"
-          >
             <div
               aria-hidden="true"
-              className="absolute top-7 start-[calc(16.67%)] end-[calc(16.67%)] h-px bg-waratha-primary/25"
+              className="absolute top-7 hidden h-px bg-waratha-primary/25 lg:block lg:start-[calc(16.67%)] lg:end-[calc(16.67%)]"
             />
-            <div className="grid grid-cols-3 gap-8">
-              {dict.steps.map((step) => (
-                <StepContent key={step.title} step={step} />
-              ))}
-            </div>
-          </motion.div>
+
+            {dict.steps.map((step) => {
+              const Icon = iconMap[step.icon]
+
+              return (
+                <motion.li
+                  key={step.number}
+                  variants={fadeUpItemVariants}
+                  className="relative flex gap-5 ps-2 lg:flex-col lg:items-center lg:gap-0 lg:ps-0 lg:text-center"
+                >
+                  <div className="relative z-10 mb-0 flex size-14 shrink-0 items-center justify-center rounded-full border-2 border-waratha-primary bg-white shadow-waratha lg:mb-5">
+                    <span className="absolute -top-1 -end-1 flex size-6 items-center justify-center rounded-full bg-waratha-primary text-xs font-bold text-white">
+                      {step.number}
+                    </span>
+                    {Icon ? (
+                      <Icon
+                        className="size-6 text-waratha-primary"
+                        aria-hidden="true"
+                      />
+                    ) : null}
+                  </div>
+
+                  <div className="pt-2 lg:pt-0">
+                    <h3 className="mb-2 text-lg font-semibold text-waratha-text lg:mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="max-w-sm text-sm leading-relaxed text-waratha-muted lg:mx-auto">
+                      {step.description}
+                    </p>
+                  </div>
+                </motion.li>
+              )
+            })}
+          </motion.ol>
         </motion.div>
       </Container>
     </section>

@@ -32,8 +32,16 @@ export function HeroSection({ dict }: HeroSectionProps) {
   const { openRequestAccess, openDemoModal } = useRequestAccess()
 
   return (
-    <section className="relative -mt-16 flex min-h-screen flex-col bg-waratha-secondary pt-16 text-white">
+    <section className="relative -mt-[var(--header-total)] flex min-h-screen flex-col bg-waratha-secondary pt-[var(--header-total)] text-white">
       <DnaPattern />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(13,92,64,0.35),transparent_60%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-waratha-secondary to-transparent"
+      />
 
       <div className="relative z-10 flex flex-1 items-center py-16 sm:py-20 md:py-28">
         <Container>
@@ -63,11 +71,11 @@ export function HeroSection({ dict }: HeroSectionProps) {
               <motion.div
                 custom={2}
                 variants={fadeUp}
-                className="flex flex-col gap-3"
+                className="flex flex-col gap-3 sm:flex-row sm:flex-wrap"
               >
                 <Button
                   size="lg"
-                  className="touch-target w-full bg-waratha-primary text-primary-foreground hover:bg-waratha-primary/90"
+                  className="touch-target w-full bg-waratha-primary text-primary-foreground hover:bg-waratha-primary/90 sm:w-auto"
                   onClick={() => openRequestAccess()}
                 >
                   {dict.hero.primaryCta}
@@ -76,7 +84,7 @@ export function HeroSection({ dict }: HeroSectionProps) {
                   size="lg"
                   variant="ghost"
                   className={cn(
-                    "touch-target w-full border border-white/20 text-white hover:bg-white/10 hover:text-white"
+                    "touch-target w-full border border-white/20 text-white hover:bg-white/10 hover:text-white sm:w-auto"
                   )}
                   onClick={openDemoModal}
                 >

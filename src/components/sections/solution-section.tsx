@@ -32,7 +32,7 @@ export function SolutionSection({ dict }: SolutionSectionProps) {
   return (
     <section
       id="product"
-      className="overflow-hidden bg-waratha-secondary py-16 text-white sm:py-20 md:py-28"
+      className="scroll-mt-header overflow-hidden bg-waratha-secondary py-16 text-white sm:py-20 md:py-28"
     >
       <Container>
         <motion.div
