@@ -72,7 +72,7 @@ export function LanguageSwitcher({ locale, labels, inverted }: LanguageSwitcherP
             }}
             aria-pressed={isActive}
             className={cn(
-              "touch-target min-h-11 rounded-full px-3 py-2 text-sm font-medium transition-colors",
+              "touch-target min-h-10 rounded-full px-3 py-1.5 text-sm font-medium transition-colors sm:min-h-11 sm:py-2",
               isActive
                 ? inverted
                   ? "bg-white text-waratha-secondary shadow-sm"

@@ -65,9 +65,13 @@ export function Navbar({ locale, dict }: NavbarProps) {
     </Link>
   )
 
+  const languageSwitcher = (
+    <LanguageSwitcher locale={locale} labels={dict.nav} inverted={!scrolled} />
+  )
+
   const actions = (
     <>
-      <LanguageSwitcher locale={locale} labels={dict.nav} inverted={!scrolled} />
+      {languageSwitcher}
       <Button
         size="sm"
         className={cn(
@@ -94,9 +98,12 @@ export function Navbar({ locale, dict }: NavbarProps) {
           </Button>
         </SheetTrigger>
         <SheetContent side={locale === "ar" ? "left" : "right"} className="w-80">
-          <SheetHeader>
+          <SheetHeader className="space-y-4">
             <SheetTitle className="sr-only">{dict.brand.name}</SheetTitle>
-            <WarathaLogo locale={locale} />
+            <div className="flex items-center justify-between gap-3">
+              <WarathaLogo locale={locale} />
+              <LanguageSwitcher locale={locale} labels={dict.nav} />
+            </div>
           </SheetHeader>
           <Separator className="my-4" />
           <nav className="flex flex-col gap-1">
@@ -158,11 +165,11 @@ export function Navbar({ locale, dict }: NavbarProps) {
           : "border-b border-transparent bg-transparent text-white"
       )}
     >
-      <Container>
-        <div className="grid h-16 grid-cols-[1fr_auto] items-center gap-2 lg:grid-cols-[1fr_auto_1fr] lg:gap-4">
+      <Container className="relative">
+        <div className="grid h-14 grid-cols-[1fr_auto] items-center gap-2 sm:h-16 lg:grid-cols-[1fr_auto_1fr] lg:gap-4">
           <div className="justify-self-start">{logo}</div>
           <div className="hidden justify-self-center lg:block">{desktopNav}</div>
-          <div className="flex items-center justify-end gap-1.5 sm:gap-2">
+          <div className="flex shrink-0 items-center justify-end gap-1.5 sm:gap-2">
             {actions}
           </div>
         </div>

@@ -3,7 +3,6 @@
 import Link from "next/link"
 
 import { WarathaLogo } from "@/components/waratha-logo"
-import { LanguageSwitcher } from "@/components/language-switcher"
 import { Container } from "@/components/layout/container"
 import { Separator } from "@/components/ui/separator"
 import { type Locale } from "@/i18n/config"
@@ -82,11 +81,10 @@ export function Footer({ locale, dict }: FooterProps) {
 
         <Separator className="my-8 bg-white/15" />
 
-        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:justify-between">
           <p className="text-center text-sm text-white/60 sm:text-start">
             {dict.footer.copyright}
           </p>
-          <LanguageSwitcher locale={locale} labels={dict.nav} inverted />
         </div>
       </Container>
     </footer>
