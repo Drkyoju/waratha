@@ -133,6 +133,8 @@ html {
   --font-arabic: var(--font-arabic);
   --font-english: var(--font-english);
   --font-sans: var(--font-english);
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
 }
 
 @layer base {
@@ -224,6 +226,24 @@ html {
   50% {
     transform: translateX(30px);
     opacity: 0.55;
+  }
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
   }
 }
 
