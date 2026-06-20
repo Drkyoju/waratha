@@ -70,7 +70,3 @@ export async function sendContactNotification(
 
   return { sent: true as const }
 }
-
-export function getPublicContactEmail(fallback: string) {
-  return process.env.CONTACT_EMAIL ?? fallback
-}

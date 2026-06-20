@@ -1,7 +1,7 @@
 "use client"
 
 import { animate, motion } from "framer-motion"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import { Container } from "@/components/layout/container"
 import { type Locale } from "@/i18n/config"
@@ -21,6 +21,48 @@ type StatsBarProps = {
 
 type StatItem = Dictionary["statsBar"]["items"][number]
 
+function useStatsActivation() {
+  const ref = useRef<HTMLElement>(null)
+  const [started, setStarted] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el || started) return
+
+    const activate = () => setStarted(true)
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      activate()
+      return
+    }
+
+    const isVisible = () => {
+      const rect = el.getBoundingClientRect()
+      return rect.top < window.innerHeight * 0.92 && rect.bottom > 0
+    }
+
+    if (isVisible()) {
+      activate()
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          activate()
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -32px 0px" }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [started])
+
+  return { ref, started }
+}
+
 function AnimatedStatValue({
   item,
   locale,
@@ -30,7 +72,7 @@ function AnimatedStatValue({
   locale: Locale
   started: boolean
 }) {
-  const [display, setDisplay] = useState(started ? item.value : 0)
+  const [display, setDisplay] = useState(0)
   const decimals = item.decimals ?? 0
 
   useEffect(() => {
@@ -67,12 +109,11 @@ function AnimatedStatValue({
 }
 
 export function StatsBar({ locale, dict }: StatsBarProps) {
-  const [started, setStarted] = useState(false)
+  const { ref, started } = useStatsActivation()
 
   return (
-    <motion.section
-      onViewportEnter={() => setStarted(true)}
-      viewport={{ once: true, amount: 0.15 }}
+    <section
+      ref={ref}
       className="scroll-mt-header bg-gradient-to-br from-waratha-primary via-[#0b5238] to-[#094a32] py-10 text-white sm:py-12 md:py-14"
     >
       <Container size="wide">
@@ -107,6 +148,6 @@ export function StatsBar({ locale, dict }: StatsBarProps) {
           ))}
         </motion.div>
       </Container>
-    </motion.section>
+    </section>
   )
 }
